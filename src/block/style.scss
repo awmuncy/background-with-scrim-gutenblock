@@ -1,0 +1,124 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+
+
+section.page_section {
+    margin: 0;
+    padding: 60px 0px;
+    // @include media-breakpoint-down(md) {
+    //     padding: 20px 10px;
+    // }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &.sizing-full-window {
+        padding-top: 10vh;
+        min-height: 100vh;
+        padding-bottom: 20vh;
+    }
+    &.sizing-large {
+        min-height: 60vh;
+    }
+    .section-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        z-index: 0;
+        .background-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    background-color: var(--negative);
+    --section-font-color: var(--positive);
+    &:nth-of-type(2n) {
+        background: var(--off-negative);
+    }
+    .main-column & {
+        background-color: transparent;
+    }
+}
+
+.section-header {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+    .headline {
+        color: var(--section-font-color);
+        margin: 0 0 8px;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center;
+        &:after {
+            top: auto;
+            width: 150px;
+            height: 2px;
+        }
+    }
+
+    .subheadline {
+        opacity: .7;
+        color: var(--section-font-color);
+        text-align: center;
+    }
+}
+
+.section-content {
+    position: relative;
+    color: var(--section-font-color);
+    width: 100%;
+    .section-content-item {
+        & ~ .section-content-item {
+            margin-top: 25px;
+        }
+    }
+}
+
+.section-footer {
+    .more {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        &:before,
+        &:after {
+            flex: 1 1 auto;
+            display: block;
+            content: "";
+            height: 2px;
+            background: var(--subtle-grey);
+        }
+
+        &:before,
+        &:after,
+        a {
+        }
+
+        a {
+            display: block;
+            margin: 0 40px;
+            font-family: var(--serif);
+            color: var(--grey);
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}

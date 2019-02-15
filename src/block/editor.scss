@@ -1,0 +1,58 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+
+.background-with-scrim-icon {
+  background-image: url('http://simpleicon.com/wp-content/uploads/bomb1.png');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.wp-block-cgb-block-background-with-scrim  {
+  color: $black;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .media-button {
+  	position: absolute;
+  	top: 10px;
+  	right: 10px;
+  	z-index: 4;
+    .button {
+      margin-right: 10px;
+    }
+  }
+  .editor-inner-blocks .wp-block {
+  	color: var(--section-font-color);
+  	border-radius: 4px;
+  }
+  .section-header {
+    z-index: 3;
+  }
+  .background-image-overlay {
+    z-index: 2;
+  }
+  .section-background-image {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cgb/block-background-with-scrim"] {
+  &[data-align="right"], &[data-align="left"] {
+    &>.editor-block-list__block-edit {
+       float: none;
+    }
+  }
+}
